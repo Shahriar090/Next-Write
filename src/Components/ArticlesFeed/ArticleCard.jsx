@@ -1,6 +1,8 @@
 import BookmarkIcon from "@/Icons/BookmarkIcon";
+import { generateSlug } from "@/utils/generateSlug";
 import { stripHtml } from "@/utils/stripHtml";
 import Image from "next/image";
+import Link from "next/link";
 
 const ArticleCard = ({ article }) => {
   const previewDescription =
@@ -17,12 +19,12 @@ const ArticleCard = ({ article }) => {
         />
         <span className="text-sm font-medium">{article.author.name}</span>
       </div>
-      <a
-        href="./details.html"
+      <Link
+        href={`/blog/${generateSlug(article.title)}`}
         className="text-xl font-bold mb-2 hover:underline cursor-pointer"
       >
         {article.title}
-      </a>
+      </Link>
       <p className="text-gray-700 mb-4">{previewDescription}</p>
       <div className="flex justify-between items-center">
         <div className="flex items-center text-gray-500 text-sm">
