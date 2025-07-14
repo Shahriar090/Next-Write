@@ -39,12 +39,10 @@ const ArticleDetailsCard = ({ article }) => {
         </div>
 
         {/* Article Content */}
-        <div className="article-content">
-          <p
-            className=" space-y-6"
-            dangerouslySetInnerHTML={{ __html: article.description }}
-          />
-        </div>
+        <div
+          className="space-y-6"
+          dangerouslySetInnerHTML={{ __html: article.description }}
+        />
       </div>
       {/* sidebar */}
       <Sidebar />
